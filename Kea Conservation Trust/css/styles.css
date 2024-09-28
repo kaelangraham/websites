@@ -1,0 +1,260 @@
+/* Universal */
+/* resets margin and padding, removes boldness from headings,
+   and sets website font to Source Sans Pro */
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family:'Source Sans Pro', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+font-weight: normal;
+}
+
+/* Fonts */
+/* adds custom font for website tagline */
+@font-face {
+    font-family: World Discovery;
+    src: url(fonts/world_discovery.otf);
+}
+
+/* Top Bar */
+/* sets up topbar and creates grid to align items */
+.topbar {
+    height: 120px;
+    width: fill;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto 40%;
+}
+
+.topbarlogo img {
+    height: 100px;
+    width: auto;
+    margin: 10px;
+    margin-left: 20px;
+}
+
+/* styles main website redirect button, when hovered gets slightly bigger */
+.button {
+    background-color: #F38032;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    margin: 20px;
+    float: left;
+    width: 120px;
+}
+.button:hover {
+    transform:scale(1.02);
+}
+
+.topbarlinks a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    text-align: center;
+}
+.upperlinks {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+/* changes color of topbar page link of current page */
+#current {
+    color: #F38032;
+}
+/* contact button (uses svf icon) */
+.contact a {
+    font-size: 14px;
+    color: #47525E;
+}
+.contact img {
+    width: 16px;
+    height: auto;
+    rotate: 270deg;
+}
+.contact {
+    align-self:center;
+    text-align: right;
+}
+/* top bar links, equal grid spacing */
+.lowerlinks {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+/* when hovering over page link, the link changes color */
+.page {
+    text-align: center;
+}
+.page a {
+    color: #47525E;
+    font-size: 16px;
+}
+.page a:hover {
+    color:  #F38032;
+}
+
+
+/* Middle Content */
+/* fullscreen images */
+.images {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+/* allows text to be on top of image on home page */
+.images-conatiner {
+    position: relative;
+}
+.tagline {
+    position: absolute;
+    top: 40%;
+    bottom: 60%;
+    left: 15%;
+    color: white;
+    font-size: 50px;
+    font-family:'World Discovery';
+}
+
+/* sets up 50/50 grid */
+.twogrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.gridimages {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+.gridimageslong {
+    width: 75%;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.twogrid1 {
+    margin: 40px 40px 40px 200px;
+    color: #47525E;
+}
+.twogrid2 {
+    margin: 40px 200px 40px 40px;
+    color: #47525E;
+}
+/* pushes down text on home page to fit with image */
+#index {
+    margin-top: 50px;
+}
+/* sets text on about us page to justify */
+#about-us {
+    text-align: justify;
+}
+/* defines font sizes and pushes lists to the right */
+.twogrid1 p, .twogrid2 p {
+    font-size: 13px;
+}
+.twogrid1 h2, .twogrid2 h2 {
+    font-size: 18px;
+}
+.twogrid1 li, .twogrid2 li {
+    font-size: 13px;
+    margin-left: 20px;
+}
+.home-heading {
+    text-align: center;
+    color: #47525E;
+    margin-top: 20px;
+}
+.home-heading h1 {
+    font-size: 50px;
+}
+.home-heading h2 {
+    font-size: 40px;
+}
+
+
+/* Bottom Bar */
+/* sets up bottom bar and creates grid to align items */
+.bottombar {
+    background-color: #454B50;
+    width: fill;
+    height: 160px;
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 20px;
+}
+/* sets up font size and color for the different sections,
+   when hovered the links will change color */
+.contactdetails {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+.quicklinks a {
+    color: #f9904a;
+    text-decoration: none;
+}
+.quicklinks h2 {
+    margin-bottom: 10px;
+}
+.quicklinks {
+    color: white;
+    text-align: center;
+}
+.quicklinks a:hover {
+    color: bisque;
+}
+
+/* Mobile Only */
+/* lower links mobile replaces the top bar links when width is less than 750px (mobile device) */
+.lowerlinksmobile {
+    display: none;
+    margin-bottom: 10px;
+}
+.lowerlinksmobile a {
+    color: #47525E;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Media Query */
+@media only screen and (max-width: 750px) {
+    /* hides contact button and main version of top bar links */
+    .contact {
+        display: none;
+    }
+    .lowerlinks {
+        display: none;
+    }
+    /* displays lower mobile version of top bar links */
+    .lowerlinksmobile {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    /* makes two grid section vertical rather than side by side */
+    .twogrid {
+        grid-template-columns: none;
+    }
+    .twogrid1, .twogrid2 {
+        margin: 20px;
+    }
+    /* makes tagline smaller for mobile devices */
+    .tagline {
+        font-size: 40px;
+        text-align: center;
+        left: 3%;
+        margin-right: 20px;
+    }
+    .page a:hover {
+        color: #F38032;
+    }
+    /* hides long images on mobile */
+    .gridimageslong {
+        display: none;
+    }
+    #index {
+        margin-top: 20px;
+    }
+    /* makes heading for two grid on home page smaller */
+    .home-heading h2 {
+        font-size: 28px;
+    }
+}

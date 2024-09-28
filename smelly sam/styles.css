@@ -1,0 +1,15 @@
+img {
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(0vw);
+    }
+
+    50% {
+        transform: translate(50vw);
+    }
+
+    100%
+}

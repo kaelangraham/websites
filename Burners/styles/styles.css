@@ -1,0 +1,1410 @@
+/* Variables for colors */
+:root {
+    --red: #EB0A1E;
+    --grey: #4D4D4D;
+    --light_grey: #7C7C7C;
+    --white: #ffffff;
+    --link_hover: #d40b1c;
+    --shadow: rgb(0 0 0/20%);
+    --dropdown: #f1f1f1;
+    --dropdown_hover: #e1e1e1;
+    --hr_light: #e0e0e0;
+    --hr_dark: rgb(0 0 0/20%);
+    --car_search: #F4F5F5;
+    --page_selector: #F1F2F3;
+    --car_details: #f2f2f2;
+    --search_cards: #f2f2f2;
+    --inactive: #f0f0f0;
+    --page_selector_hover: #f9f9f9;
+}
+
+/* Removes padding and margin from everything */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+/* Imports Monserrat Font */
+@font-face {
+    font-family: Monserrat;
+    src: url(fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+/* Sets the font of everything to Monserrat */
+body {
+    font-family: Monserrat;
+}
+
+/* Enables the sticky navbar to work */
+.wrapper {
+    position: absolute;
+    width: 100%;
+}
+
+/* Top Navbar */
+.navbar_top_links {
+    display: flex;
+    margin-left: auto;
+    padding-right: 90px;
+    font-weight: 600;
+}
+.navbar_top_links i {
+    color: var(--grey);    
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.navbar_top_links div {
+    display: flex;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.navbar_links_logo {
+    margin-left: 5px;
+}
+
+.navbar_top_logo {
+    padding-left: 20px;
+}
+
+.navbar_top {
+    padding: 25px 0 25px 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* Bottom Navbar */
+.navbar_bottom {
+    background-color: var(--red);
+    display: flex;
+    padding: 0 45px 0 45px;
+    position: sticky;
+    z-index: 1;
+    top: -1px;
+}
+
+.navbar_bottom div {
+    display: flex;
+}
+
+.navbar_bottom div a {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0 15px 15px;
+    color: var(--white);
+    font-weight: 500;
+    transition: background-color .3s;
+}
+
+.navbar_bottom i {
+    margin-left: 20px;
+    margin: 1px;
+    margin: 1px 10px 0 20px;
+}
+
+.search_link i {
+    font-size: 14px;
+    margin-top: 2px;
+    margin-right: 5px;
+}
+
+.navbar_bottom_search {
+    margin-left: auto;
+}
+
+/* Navbar dropdowns */
+.dropdown {
+    position: relative;
+    display: flex;
+}
+
+.dropdown:hover .dropdown_content {
+    inset: 0 !important;
+}
+
+.dropdown_content a {
+    background-color: var(--dropdown);
+    pointer-events: all;
+}
+
+.dropdown_content {
+    display: block !important;
+    position: absolute;
+    min-width: 200px;
+    inset: -140px 0 0 0 !important;
+    z-index: 1;
+    transition: inset 0.3s ease-in-out;
+}
+.dropdown_content_crop {
+    overflow: hidden;
+    position: absolute;
+    width: 200px;
+    height: 135px;
+    top: 100%;
+    pointer-events: none;
+    filter: drop-shadow(var(--shadow) 0px 2px 5px);
+}
+.dropdown_content p {
+    color: black;
+    margin-right: auto;
+    font-size: 12px;
+}
+.dropdown, .search_link {
+    transition: background-color .3s ease-in-out !important;
+}
+.dropdown:hover, .search_link:hover {
+    background-color: var(--link_hover);
+}
+
+.dropdown_content a:hover p {
+    color: var(--link_hover);
+}
+
+
+/* Main Images + Slogan */
+.main_container {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+}
+
+.main_container img {
+    width: 100%;
+    margin: -100px 0 0 0;
+    filter: brightness(30%);
+}
+
+.main_container h1 {
+    color: var(--white);
+    font-size: 60px;
+}
+
+.slogan {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    cursor:default;
+}
+
+/* Search by car type (index page) */
+
+.type_search_container {
+    text-align: center;
+    padding: 40px;
+}
+
+.type_search_container h1 {
+    font-weight: 600;
+}
+
+.type_search_images form {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(150px, calc(100%/6)));
+    margin: 25px;
+}
+
+.type_search_images form button p {
+    font-family: Monserrat;
+    font-size: 15px;
+    transition: color .2s;
+}
+
+.type_search_images form button  {
+    border: none;
+    background: none;
+    margin: 0 1.5%;
+}
+.type_search_images form button img {
+    transition: opacity .2s;
+}
+
+.type_search_images form button:hover p {
+    color: black;
+}
+
+.type_search_images form button:hover img {
+    opacity: 0.8;
+}
+
+.type_search_images p {
+    font-weight: 600;
+    color: var(--grey);
+    text-align: center;
+}
+
+.standard_search_button button {
+    width: 160px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--red);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: var(--shadow) -3px 3px 3px;
+}
+
+.standard_search_button:hover button {
+    background-color: var(--link_hover);
+    box-shadow: var(--shadow) -2.2px 2.2px 3px;
+}
+
+/* Reviews */
+
+.reviews {
+    display: flex;
+    padding: 0 50px;
+}
+
+.reviews_container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+}
+.reviews_container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.reviews_container img {
+    width: 100%;
+    opacity: 0.4;
+}
+
+.reviews_content {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+}
+
+.review_card {
+    background-color: var(--white);
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: var(--shadow) -3px 3px 3px;
+}
+
+.review_user {
+    display: flex;
+}
+
+.review_profile div {
+    padding: 5px;
+    border-radius: 100%;
+    height: 35px;
+    width: 35px;
+}
+
+/* different colors for the user profiles */
+#rating1 div {
+    background-color: #F34135;
+}
+#rating2 div {
+    background-color: #00BDA2;
+}
+#rating3 div {
+    background-color: #5E7C8A;
+}
+
+.review_profile div p {
+    color: var(--white);
+    font-size: 35px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: -4px;
+}
+
+.review_rating {
+    margin-left: 20px;
+    margin-top: 7px;
+}
+.review_rating p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 1px;
+}
+
+.stars i {
+    color: gold;
+    font-size: 16px;
+}
+
+.review_text {
+    color: var(--light_grey);
+    font-size: 14px;
+    padding: 10px 30px 0 65px;
+}
+
+.review_location {
+    color: var(--light_grey);
+    font-size: 11px;
+    padding: 40px 0 0 5px;
+}
+
+/* footer */
+.footer_container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* Background image of the footer */
+.footer_container img {
+    width: 100%;
+    opacity: 0.15;
+    margin: -370px 0;
+}
+.footer_content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 350px auto;
+    margin: 50px 100px;
+}
+
+.opening_hours {
+    margin-top: 20px;
+}
+
+.opening_hours h1 {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.opening_hours_container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.opening_hours_container p {
+    color: var(--white);
+    margin: 10px 50px 0 2px;
+    font-size: 14px;
+
+}
+
+.opening_hours_day {
+    font-weight: 600;
+}
+
+.opening_hours_time {
+    margin-left: auto;
+    text-align: right;
+}
+
+.get_in_touch_container {
+    background-color: var(--white);
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+    height: 210px;
+    margin: 0 10px 0 50px;
+    width: 70%;
+}
+.get_in_touch_container h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+}
+#footer_main {
+    margin-left: 100px;
+}
+
+.get_in_touch_content {
+    display: flex;
+    margin: 50px 50px 50px 150px;
+}
+
+.get_in_touch_content div {
+    margin: 0 20px;
+}
+.get_in_touch_content div h1 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.get_in_touch_content div div {
+    display: flex;
+    font-size: 14px;
+    color: var(--grey);
+}
+
+.get_in_touch_content div div i {
+    font-size: 12px;
+    margin: 2.5px 5px 0 0;
+}
+
+.footer_address div {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Logo and red overlay on the navbar */
+.footer_logo {
+    position: absolute;
+    top: -5%;
+    left: -7%;
+    height: 270px;
+    overflow: hidden;
+}
+.footer_logo svg {
+    height: 300px;
+}
+
+/* Car Search */
+
+.car_search_container {
+    background-color: var(--car_search);
+}
+
+.car_search {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 40px 20px 0 20px;
+}
+
+/* Search dropdowns */
+.search_dropdown {
+    background-color: var(--white);
+    border: 1px solid var(--red);
+    border-radius: 10px;
+    margin: 0 20px;
+    padding: 20px;
+    width: 80%;
+    display: flex;
+}
+
+.car_search div {
+    margin-bottom: 20px;
+}
+
+.search_split {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.search_split div {
+    margin-right: 50px;
+}
+
+.search_dropdown i {
+    margin-left: auto;
+}
+
+/* Styling all inputs */
+
+input {
+    border: none;
+    width: 80%;
+    height: 500%;
+    padding: 20px;
+    background-color: var(--white);
+    border: 1px solid var(--red);
+    border-radius: 10px;
+    margin: 0 20px;
+    font-family: Monserrat;
+    font-size: 16px;
+    height: 20px;
+}
+/* Makes the place holder text solid */
+::placeholder {
+    opacity: 1;
+}
+
+.search_dropdown {
+    position: relative;
+    height: 20px;
+    cursor: pointer;
+}
+
+.search_dropdown:hover .search_dropdown_content {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.search_dropdown div {
+    display: flex;
+}
+
+.search_dropdown_content {
+    display: none !important;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 100%;
+    margin-left: -20px;
+    top: 101%;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: var(--shadow) 0 1px 3px 2px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.search_dropdown_content input {
+    display: none;
+}
+
+.search_dropdown_content label {
+    font-family: Monserrat;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    margin: 10px 0 -10px 0;
+}
+
+.search_dropdown_content div:hover {
+    background-color: var(--dropdown);
+    color: var(--red) !important;
+}
+
+.search_dropdown_content div label:hover {
+    cursor: pointer;
+}
+
+.search_dropdown_content div {
+    margin: 0;
+}
+
+.search_heading {
+    margin: 0 0 2px 20px ;
+}
+/* div around the search button */
+.car_search_button {
+    justify-content: center;
+    text-align: center;
+}
+/* actual search button */
+.car_sb {
+    width: 90%;
+    height: 60px;
+    margin-top: 21px;
+    background-color: var(--red);
+    border: none;
+    border-radius: 5px;
+    box-shadow: var(--shadow) -3px 3px 3px;
+    color: white;
+    font-family: Monserrat;
+    font-size: 20px;
+    font-weight: 600;
+}
+.car_sb:hover {
+    background-color: var(--link_hover);
+    box-shadow: var(--shadow) -2.2px 2.2px 3px;
+}
+/* makes buttons look clickable */
+button {
+    cursor: pointer;
+}
+
+/* Car Search Results */
+
+.search_results_container {
+    padding: 50px 80px 0 80px;
+    margin-bottom: -20px;
+}
+/* all items with bold class become bold */
+.bold {
+    font-weight: 600;
+}
+
+.results_number {
+    display: flex;
+}
+
+.results_number p {
+    font-size: 12px;
+    margin-right: 8px;
+    color: var(--grey);
+}
+.results_number .bold {
+    font-size: 14px;
+    margin-top: -1px;
+}
+hr {
+    margin: 4px 0 40px 0;
+    border-width: 0;
+    height: 1.2px;
+    background-color: var(--light_grey);
+}
+
+/* crops car images displayed on cars.php */
+.car_card_crop {
+    height: 200px;
+    width: 250px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.car_card_crop img {
+    height: 100%;
+    margin-left: -5px;
+}
+
+.car_card {
+    display: grid;
+    grid-template-columns: 250px auto;
+}
+
+/* styling elements with certain classes */
+.price {
+    color: var(--red);
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.light {
+    color: var(--grey);
+    font-size: 12px;
+}
+.car_info {
+    height: 200px;
+    max-width: 250px;
+    position: relative;
+    padding: 0 10px;
+}
+
+#car_title {
+    color: black;
+}
+
+.learn_more {
+    color: var(--red);
+    font-weight: 600;
+    position: absolute;
+    bottom: -2%;
+}
+.learn_more:hover {
+    color: var(--link_hover);
+}
+
+/* div with br tag for spacing */
+.br {
+    height: 40px;
+}
+
+#car {
+    margin: 50px 0;
+}
+
+.cars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.car {
+    margin: 0 15px;
+}
+
+/* page selector */
+.page_selector_container {
+    background-color: var(--page_selector);
+    text-align: center;
+    padding: 30px 0 10px 0;
+}
+
+#page_selector {
+    justify-content: center;
+    margin-bottom: 10px;
+}
+/* bage selector buttons */
+.page_selector button {
+    height: 35px;
+    width: 35px;
+    border: var(--light_grey) solid 1px;
+    border-radius: 15px;
+    background-color: white;
+    color: var(--light_grey);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 2px 10px 2px;
+    transition: all .1s ease-in-out;
+}
+.page_selector button:hover {
+    background-color: var(--page_selector_hover);
+    color: var(--grey);
+    font-size: 16px;
+}
+
+.page_selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* changes page selector color if not usable */
+#inactive {
+    background-color: var(--inactive);
+    pointer-events: none;
+}
+/* Removes side bar on number inputs (shows it in chrome when entering text) */
+input[type=number] {
+    appearance: textfield;
+}
+
+/* if there are no results, hides the main section */
+#no_results {
+    display: none;
+}
+
+/* Car Details */
+
+.car_details_none {
+    padding: 20px 0 300px 60px;
+}
+.car_details_none h2 {
+    margin: 20px 0;
+}
+.car_details_none p {
+    margin-bottom: 7.5px;
+}
+.car_details_none a {
+    color: var(--red);
+    font-weight: 600;
+}
+.car_details_none a:hover {
+    color: var(--link_hover)
+}
+
+.car_details_top_container {
+    display: flex;
+    margin: 0 30px 15px 30px;
+}
+
+.heading_price_div {
+    margin-left: auto;
+    text-align: right;
+    margin-top: -15px;
+}
+.heading_price {
+    color: var(--red);
+}
+.car_details_hr {
+    background-color: var(--hr_light);
+}
+
+.info_hr {
+    background-color: var(--hr_dark);
+    margin: 0;
+}
+
+.car_details_container {
+    margin: 50px;
+}
+
+/* puts the images and details next to eachother */
+.car_details_main_container {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 790px auto;
+}
+/* main image */
+.car_details_main_images {
+    display: flex;
+}
+
+.details_side_images {
+    margin: -2px 0 -2px 15px;
+}
+
+.details_main_image_crop {
+    height: 433px;
+    width: 550px;
+    overflow: hidden;
+}
+
+.details_main_image_crop img {
+    height: 100%;
+    margin-left: -15px;
+}
+
+/* side images */
+.side_image_crop {
+    height: 143px;
+    width: 100%;
+    overflow: hidden;
+    margin: 2px 0;
+}
+
+.side_image_crop img {
+    height: 100%;
+    cursor: pointer;
+}
+
+.side_image_crop img:hover {
+    opacity: 0.8;
+    height: 144px;
+}
+/* car details */
+.car_details_main_details {
+    background-color: var(--car_details);
+    border-top: 4px solid var(--red);
+    padding: 0 15px;
+}
+
+/* car details styling */
+.info_card {
+    display: flex;
+    padding: 20px 0;
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+}
+
+.info_type {
+    color: var(--grey);
+    font-weight: 300;
+}
+
+.info {
+    font-weight: 500;
+}
+
+.buy_now {
+    margin-top: 10px;
+}
+.buy_now p {
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+.buy_now a {
+    color: var(--red);
+    font-weight: 600;
+}
+.buy_now a:hover {
+    color: var(--link_hover);
+}
+
+/* Help Page */
+
+.faq_container {
+    padding: 60px 200px 100px 200px;
+}
+.faq_container h1 {
+    font-size: 40px;
+    margin: 0 20px;
+}
+.faq_container hr {
+    margin: 0;
+}
+#faq_heading {
+    margin-bottom: 60px;
+}
+/* adds spacing between the faq sections */
+#lower_faq {
+    margin-top: 60px;
+}
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0 20px 10px 20px;
+}
+/* overflow hidden hides answer section */
+.faq {
+    max-height: 30px;
+    overflow: hidden;
+    padding: 20px;
+    transition: max-height .5s, background .5s;
+    cursor: pointer;
+}
+/* when hovered over increases the hight to show FAQ answer */
+.faq:hover {
+    max-height: 150px;
+    background-color: var(--dropdown);
+}
+.faq h3 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 400;
+}
+.faq p {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+
+/* Media Queries */
+@media only screen and (max-width: 1180px) {
+    /* puts car details under car image on details page */
+    .car_details_main_container {
+        display: flex;
+        flex-direction: column;
+    }
+    .car_details_main_images {
+        justify-content: center;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .car_details_main_images {
+        display: grid;
+        grid-template-rows: auto auto;
+        width: 103.58%;
+    }
+    /* makes side images horizontal + changes hover effect */
+    .details_side_images {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        margin: 0;
+        width: 96.5%;
+    }
+    /* Index car search 2 rows */
+    .type_search_images form {
+        grid-template-columns: repeat(3, minmax(150px, calc(100%/3)));
+        margin: 20px 0;
+    }
+    .main_container img {
+        margin: 0;
+        width: 200%;
+        height: auto;
+    }
+    /* navbar resizing */
+    .navbar_top_links {
+        font-size: 14px;
+        margin: 0 0 0 auto;
+        padding-right: 4px;
+    }
+    .navbar_top {
+        padding: 10px 30px;
+    }
+    /* reviews */
+    #rating_card3 {
+        display: none;
+    }
+    /* footer resizing */
+    .get_in_touch_container {
+        display: none !important;
+    }
+    .opening_hours_time {
+        margin-left:60px;
+    }
+    .footer_content{
+        display: flex;
+        justify-content: center;
+    }
+    .opening_hours {
+        margin-right: 15vw;
+    }
+    .faq_container {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    /* changes car result dispalys into cards */
+    .cars {
+        display: flex;
+        flex-direction: column;
+    }
+    .car_card {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: var(--shadow) 0 0 3px 2px;
+    }
+    .car_card_crop {
+        width: 100%;
+        height: 360px;
+    }
+    .car_card_crop img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        margin-top: 1vw;
+    }
+    .car_search {
+        grid-template-columns: repeat(2, 48vw);
+    }
+}
+@media only screen and (max-width: 700px) {
+    /* car results display */
+    .car_card {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: var(--shadow) 0 0 3px 2px;
+    }
+    .car_card_crop {
+        width: 100%;
+        height: 280px;
+    }
+    .car_card_crop img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+    .br {
+        height: 10px;
+    }
+    .learn_more {
+        bottom: 5%;
+    }
+    .car_info {
+        margin-top: 10px;
+        height: 120px;
+    }
+    /* removes navbar text */
+    .navbar_links_logo {
+        display: none;
+    }
+    .navbar_top_links div i {
+        font-size: 20px;
+    }
+    .dropdown_link {
+        font-size: 13px;
+    }
+    .navbar_bottom {
+        padding: 0 6px;
+    }
+    /* changes reviews to be vertical + adds 3rd card back */
+    .reviews {
+        display: flex;
+        flex-direction: column;
+    }
+    .reviews_container {
+        height: 550px;
+    }
+    .reviews_container img {
+        height: 100%;
+    }
+    #rating_card3 {
+        display: block;
+    }
+    /* Index Reviews */
+    .reviews_container {
+        height: 850px;
+    }
+    .reviews_container img {
+        height: 100%;
+        width: auto;
+    }
+    .reviews {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    /* help section */
+    .faq h3 {
+        font-size: 20px;
+    }
+    .faq {
+        max-height: 20px;
+    }
+    .faq_container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .details_main_image_crop {
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    /* changing dropdown font size */
+    .dropdown_link {
+        font-size: 12px;
+    }
+    /* FAQ */    
+    .faq_container {
+        padding: 20px 10px 50px 10px;
+    }
+    .faq h3 {
+        font-size: 20px;
+    }
+    .faq p {
+        font-size: 13px;
+    }
+    .faq {
+        max-height: 20px;
+    }
+
+    /* Navbar */
+    .navbar_top {
+        padding: 10px 0;
+    }
+    /* hides the burners text next to logo */
+    #Burners {
+        display: none;
+    }
+    /* makes logo smaller */
+    #svg_logo {
+        height: 60px;
+        width:  auto;
+    }
+    .logo_container {
+        height: 60px;
+        width: 50px;
+        overflow: hidden;
+    }
+
+    .navbar_top_links {
+        margin: 0 20px 0 auto;
+        padding-right: 90px;
+        font-size: 12px;
+        padding: 0;
+    }
+    /* removes top right navbar text */
+    .navbar_links_logo {
+        display: none;
+    }
+    .navbar_top_links i {
+        font-size: 18px;
+    }
+    /* navbar bottom links */
+    .navbar_bottom {
+        font-size: 11px;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+    /* brings all links together */
+    .navbar_bottom_dropdowns {
+        display: grid; 
+        grid-template-columns: repeat(3, 10px);
+    }
+    .dropdown, .dropdown_link, .navbar_bottom_search, .search_link {
+        width: 100%;
+    }
+    .dropdown_link i {
+        margin-left: 2vw;
+    }
+    .dropdown_link p {
+        margin-left: -10px;
+    }
+    .navbar_bottom_search {
+        margin: 0;
+    }
+
+
+    /* Index Main Image */
+    .main_container {
+        height: 300px;
+        width: 100%;
+    }
+    .main_container img {
+        height: auto;
+        width: 100%;
+        margin: 0;
+    }
+    .slogan {
+        top: 30%;
+    }
+    .slogan h1 {
+        font-size: 30px;
+    }
+
+    /* Index Search */
+    .type_search_container h1 {
+        font-size: 25px;
+    }
+
+    .type_search_images form {
+        grid-template-columns: repeat(2, 1fr) !important;
+        margin: 20px 0 !important;
+    }
+
+    .type_search_images form button {
+        margin-bottom: 20px !important;
+    }
+
+    /* Index Reviews */
+    .reviews_container {
+        height: 850px;
+    }
+    .reviews_container img {
+        height: 100%;
+        width: auto;
+    }
+    .reviews {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Footer */
+    /* hides get in touch section (info already at top) */
+    .get_in_touch_container {
+        display: none;
+    }
+    .footer_content {
+        margin: 0;
+        justify-content: center;
+    }
+    .footer_container {
+        height: 300px;
+    }
+    .footer_container img {
+        margin-top: -100px;
+    }
+    .opening_hours {
+        margin: 30px 10px 0 10px;
+        padding: 0;
+    }
+    .opening_hours h1 {
+        text-align: center;
+    }
+    .opening_hours_container {
+        margin: 15px 0 0 50px;
+    }
+
+    /* Cars Car Search */
+    .car_search_container {
+        width: 100%;
+    }
+    .car_search_container div {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    .car_search_container div div {
+        margin: 0 0 10px 0;
+    }
+    .search_dropdown {
+        margin: 0 20px !important;
+        padding: 20px !important;
+    }
+    .search_dropdown i {
+        display: none;
+    }
+    .text_search {
+        padding-bottom: 0px !important;
+        margin-bottom: -10px !important;
+    }
+    .search_dropdown_content {
+        margin-left: -20px !important;
+        padding: 0 !important;
+    }
+    .search_dropdown_content div {
+        padding: 10px;
+        margin: 0 !important;
+    }
+    /* hides price and odometer search (takes up too much room) */
+    #search_split {
+        display: none;
+    }
+    /* turns results into cards */
+    .search_results_container {
+        padding: 20px 10px;
+        background-color: var(--search_cards);
+    }
+    .cars {
+        display: flex;
+        flex-direction: column;
+    }
+    .car_card {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: var(--shadow) 0 0 3px 2px;
+    }
+    .car_card_crop {
+        width: 100%;
+        height: 280px;
+    }
+    .car_card_crop img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+    /* div spacing */
+    .br {
+        height: 10px;
+    }
+    .learn_more {
+        bottom: 5%;
+    }
+    .car_info {
+        margin-top: 10px;
+        height: 120px;
+    }
+    /* hides horizontal lines between cars */
+    #car {
+        display: none;
+    }
+    .car {
+        margin-bottom: 50px;
+    }
+
+    /* Car Details */
+    .car_details_container {
+        margin: 0;
+    }
+    /* Puts price below car name */
+    .car_details_top_container {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+    .heading_price_div {
+        margin: 0 0 0 10px;
+        text-align: left;
+    }
+    .heading_name {
+        margin: 10px;
+    }
+    /* makes info displayed vertically */
+    .car_details_main_container {
+        display: flex;
+        flex-direction: column;
+    }
+    .car_details_main_images {
+        flex-direction: column;
+        width: 103.58%;
+    }
+    /* makes side images horizontal + changes hover effect */
+    .details_side_images {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0;
+        width: 96.5%;
+    }
+    .details_main_image_crop {
+        width: 100%;
+        height: 300px;
+        margin-left: 0;
+    }
+    #details_main_image {
+        width: 100%;
+        height: auto;
+    }
+    .side_image_crop {
+        width: auto;
+        height: 100px;
+        margin: 10px 2.5px;
+    }
+    .side_image_crop img {
+        width: 100%;
+        height: auto;
+    }
+    .side_image_crop img:hover {
+        height: auto;
+        
+    }
+    /* Makes bottom part of details display horizontally */
+    .info_card {
+        padding: 15px;
+    }
+    .buy_now {
+        display: flex;
+        margin-left: 10px;
+    }
+    .buy_now p {
+        margin-right: 20px;
+    }
+}
